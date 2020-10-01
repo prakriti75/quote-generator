@@ -1,51 +1,33 @@
-/*
-var quote=["I never loose.I either win or learn",
-           "Anyone who has never made a mistake has never tried anything             new.",
-           "Live as if you were to die tomorrow.Learn as if you were to             live forever"];
-var author=["Nelson Mandela","Albert Einstein","Mahatma Gandhi"];
-*/
-
-
 (function(){
 
-    
-    var quote=["I never loose.I either win or learn",
-           "Anyone who has never made a mistake has never tried anything new.",
-           "Live as if you were to die tomorrow.Learn as if you were to live forever"];
-var author=["Nelson Mandela","Albert Einstein","Mahatma Gandhi"];
-
-
-document.getElementById("btn").addEventListener("click",function(){
-    var quoteIndex,authorIndex;
-    for(var i=0;i<quote.length;i++)
+  var quotes = [
     {
-     quoteIndex=Math.floor(Math.random()*quote.length);
+      "name": "Nelson Mandela",
+      "quote": "I never loose.I either win or learn"
+    },
+    {
+      "name": "Albert Einstein",
+      "quote": "Anyone who has never made a mistake has never tried anything new."
+    },
+    {
+      "name": "Mahatma Gandhi",
+      "quote": "Live as if you were to die tomorrow.Learn as if you were to live forever"
+    },
+    {
+      "name": "Abdul Kalam",
+      "quote": "Dreams are not those which u have in sleep, it's those which doesn't let you sleep."
     }
-  console.log(quoteIndex);
-  console.log(authorIndex);
-  document.getElementById("quote").innerHTML="quote=" + quote[quoteIndex];
-   document.getElementById("author").innerHTML="author=" + author[quoteIndex];
+  ]
+  function myQuotes(){
+    const index = Math.floor(Math.random()*quotes.length)
+    document.getElementById("personalityName").innerHTML = quotes[index].name
+    document.getElementById("quotes").innerHTML = quotes[index].quote
+  }
 
-    
-});
+  document.getElementById("btn").onclick = myQuotes;
+  
+
 })();
-
-/*
-document.getElementById("btn").addEventListener("click",function(){
-    var quoteIndex,authorIndex;
-    for(var i=0;i<quote.length;i++)
-    {
-     quoteIndex=Math.floor(Math.random()*quote.length);
-    }
-  console.log(quoteIndex);
-  console.log(authorIndex);
-  document.getElementById("quote").innerHTML="quote=" + quote[quoteIndex];
-   document.getElementById("author").innerHTML="author=" + author[quoteIndex];
-
-    
-});
-*/
-
 
 
 
